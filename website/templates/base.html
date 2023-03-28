@@ -14,11 +14,29 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+    <style>
+      .navbar {
+        background-color: #ffffff !important; /* white background color */
+      }
 
+      .navbar-nav .nav-link {
+        color: #000000 !important; /* black link color */
+      }
+
+      /* added style for logo */
+      .navbar-brand {
+        font-family: 'Arial', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #a4f4f9 !important;
+      }
+    </style>
     <title>{% block title %}Home{% endblock %}</title>
   </head>
-  <body>
+  <body style="background-image:url('https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+background-repeat: no-repeat; background-size: 1550px 950px;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">OMNINOTES</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -28,7 +46,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav">
+        <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
